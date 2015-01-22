@@ -11,19 +11,13 @@
 </head>
 <body ng-controller = "getCandidatesByPC">
 <center>
-
-
     <div class="header">
       <h1> find your local candidate </h1>
     </div>
-
-
-
 <div id="wrap-container">
             <form id="search-form" ng-submit="getCandidates()">
                     <input type="text" placeholder="enter postcode" ng-model="postCode"/>
             </form>
-
 <!-- <div class="container" ng-repeat="contact in contacts | orderBy: 'first_name' | filter: searchContact "> -->
 <div class="container">
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
@@ -38,16 +32,12 @@
                   {{myError}}
                 
                     <div class="round-button" onclick="change()"><div class="round-button-circle"><a href="questions.html" class="round-button" onmouseover="changeButtonPlaceHolder()">search?</a></div></div>       
-          </div>
-  
+          </div> 
         </div>
 </center>
-
-
 <footer>
   student stop aids©
 </footer>
-   
       <!-- libraries -->
       <script src="/bower_components/angular/angular.js"></script>
       <script src="/bower_components/angular-resource/angular-resource.min.js"></script>

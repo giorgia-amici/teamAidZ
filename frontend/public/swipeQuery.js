@@ -3,6 +3,7 @@ var swipe = function() {
     console.log(listContainer, 'hi clare!!')
     var targetSelector = 'ul li';
     var threshold = 100;
+    // $.(window).on('resize', sizeItems).trigger('resize');
 
     Hammer(listContainer).on('drag', function(e) {
 
@@ -35,3 +36,4 @@ var swipe = function() {
         }
     });
 }
+swipe()
