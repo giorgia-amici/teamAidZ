@@ -9,16 +9,14 @@ var swipe = function(){
     var isDraggingTarget = false,
         isDraggingChildOfTarget = false,
         draggedParents = false;
-    
     var dragged = $(e.target);
-     console.log(dragged, 'i am dragged')
+     		console.log(dragged, 'i am dragged')
     isDraggingTarget = dragged.is(targetSelector);
-    
+
     if(!isDraggingTarget) {
       draggedParents = dragged.parents(targetSelector);
       isDraggingChildOfTarget = draggedParents.length;
-    }
-    
+    }  
     if(isDraggingTarget || isDraggingChildOfTarget) {
       e.stopPropagation();
       e.preventDefault();
