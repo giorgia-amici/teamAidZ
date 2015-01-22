@@ -5,10 +5,8 @@ var swipe = function() {
     // console.log(listContainer, 'hi clare!!')
     var targetSelector = 'ul li';
     var threshold = 100;
-    // $.(window).on('resize', sizeItems).trigger('resize');
 
     Hammer(listContainer).on('drag', function(e) {
-
         var isDraggingTarget = false,
             isDraggingChildOfTarget = false,
             draggedParents = false;
@@ -39,3 +37,9 @@ var swipe = function() {
     });
 }
 swipe()
+
+var lockQuestion = function(){
+	console.log(document.getElementById("unlocked"))
+	document.getElementById("unlocked").src = "/images/lock.png"
+	document.getElementById("unlocked").id = "locked"
+}
