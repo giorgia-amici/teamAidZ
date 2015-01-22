@@ -1,4 +1,6 @@
 var swipe = function() {
+// IF LOCK IS FALSE
+
     var listContainer = document.getElementById('wrap');
     // console.log(listContainer, 'hi clare!!')
     var targetSelector = 'ul li';
