@@ -37,7 +37,7 @@
                     <p>{{mpCandidate.constituency}}</p>
                   {{myError}}
                 
-                    <div class="round-button" onclick="change()"><div class="round-button-circle"><a href="questions.html" class="round-button">search?</a></div></div>       
+                    <div class="round-button" onclick="change()"><div class="round-button-circle"><a href="questions.html" class="round-button" onmouseover="changeButtonPlaceHolder()">search?</a></div></div>       
           </div>
   
         </div>
@@ -64,6 +64,11 @@
     if (elem.value=="Close Curtain") elem.value = "Open Curtain";
     else elem.value = "Close Curtain";
       }
+            var  changeButtonPlaceHolder = function(){
+      var myNewButton = document.getElementsByClassName('round-button')[1]
+      myNewButton.innerHTML = "Go To Questions";
+        }
+        
       </script>
 
 
