@@ -15,13 +15,14 @@ $scope.getCandidates = function(){
 }
   $scope.getCandidates()
 
-// $scope.trialFunction = function(){
-//     var urlTrial = "https://stopaidz-rails1.herokuapp.com/candidates"
-//     $http.jsonp(urlTrial)
-//     .success(function(response){
-//         console.log(response)
-//     })
-// }
+$scope.trialFunction = function(){
+    var urlTrial = "https://stopaidz-rails1.herokuapp.com/candidates/1/questions?callback=JSON_CALLBACK"
+    $http.jsonp(urlTrial)
+    .success(function(response){
+        console.log(response.questions)
+        $scope.questions = response.questions
+    })
+}
 
 // $scope.trialFunction()
 
