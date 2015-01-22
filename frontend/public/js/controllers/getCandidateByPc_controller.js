@@ -15,7 +15,6 @@ $scope.getCandidates = function(){
 }
   $scope.getCandidates()
 
-
 // $scope.trialFunction = function(){
 //     var urlTrial = "https://stopaidz-rails1.herokuapp.com/candidates"
 //     $http.jsonp(urlTrial)
