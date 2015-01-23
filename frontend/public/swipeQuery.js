@@ -56,7 +56,6 @@ var lockQuestion = function(){
     //  $('li')[1].attributes[3].value =  true
     // }
 //      console.log($('li')[1].attributes[3].value)
-     // console.log($('li'))
 }
 
 var setLockDefault = function(){

@@ -31,14 +31,4 @@ $scope.postQuestion = function(){
 }
 
 
-
-
-
-
-
-
-
-
-
-
 })
