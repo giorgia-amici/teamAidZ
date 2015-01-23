@@ -1,4 +1,5 @@
 var swipe = function() {
+
 // IF LOCK IS FALSE
 
     var listContainer = document.getElementById('wrap');
@@ -25,7 +26,7 @@ var swipe = function() {
             var el = (isDraggingChildOfTarget) ? draggedParents : dragged;
             var dragDistance = e.gesture.deltaX;
 
-            if (dragDistance > threshold) {
+            if (dragDistsance > threshold) {
 
                 el.removeClass('prompt-remove');
 
