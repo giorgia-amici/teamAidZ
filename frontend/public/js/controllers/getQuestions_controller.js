@@ -8,17 +8,28 @@ $scope.getQuestions = function(){
         $scope.questions = []
         $scope.allQuestions = response.questions
         $scope.allQuestions.forEach(function(singleQuestion){
-     		$scope.questions.push(singleQuestion.ask_text)            
+     		$scope.questions.push(singleQuestion.ask_text)    
+     		$scope.FirstMockQuestion = $scope.questions[0] 
+     		console.log($scope.FirstMockQuestion)       
         })
     })
 }
 
 $scope.getQuestions()
 
+$scope.postQuestion = function(){
+	  console.log("postQuestion")
+	  var url = "https://stopaidz-rails1.herokuapp.com/users/1/candidates/1/asks"
+	  // var url = "http://localhost:3500"
+		$http.post(url, { question : $scope.FirstMockQuestion })
+		.success(function(response){
+			console.log(response, 'success')
+		})
+		.error(function(error){
+			console.log(error)
+		})
+}
 
-// $scope.lockQuestion = function(){
-//     console.log('ciao clare I am a blocked lock')
-// }
 
 
 
