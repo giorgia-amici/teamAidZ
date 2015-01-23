@@ -1,9 +1,7 @@
 var swipe = function() {
-
 // IF LOCK IS FALSE
 
     var listContainer = document.getElementById('wrap');
-    // console.log(listContainer, 'hi clare!!')
     var targetSelector = 'ul li';
     var threshold = 100;
 
@@ -12,7 +10,8 @@ var swipe = function() {
             isDraggingChildOfTarget = false,
             draggedParents = false;
         var dragged = $(e.target);
-        console.log(dragged, 'i am dragged')
+        // console.log(dragged, 'i am dragged')
+
         isDraggingTarget = dragged.is(targetSelector);
 
         if (!isDraggingTarget) {
@@ -26,7 +25,7 @@ var swipe = function() {
             var el = (isDraggingChildOfTarget) ? draggedParents : dragged;
             var dragDistance = e.gesture.deltaX;
 
-            if (dragDistsance > threshold) {
+            if (dragDistance > threshold) {
 
                 el.removeClass('prompt-remove');
 
@@ -40,7 +39,23 @@ var swipe = function() {
 swipe()
 
 var lockQuestion = function(){
-	console.log(document.getElementById("unlocked"))
-	document.getElementById("unlocked").src = "/images/lock.png"
-	document.getElementById("unlocked").id = "locked"
+    // // console.log($(this))
+    // var toBlock = $("#unlocked")
+    // this.src = "/images/lock.png"
+    // toBlock.id = "locked"
+    // toBlock.addClass = "iAmLocked"
+
+    // // // console.log(toBlock.hasChildNodes('img'))
+    // // console.log(toBlock.childNodes[1].src)
+    // // if(toBlock.childNodes[1].src==="http://localhost:3000/images/unlock.png"){
+    //  $('li')[1].attributes[3].value =  true
+    // }
+//      console.log($('li')[1].attributes[3].value)
+     // console.log($('li'))
 }
+
+var setLockDefault = function(){
+      $('li').attr('locked', false);
+      console.log($('li')[1].attributes[3].value)
+}
+

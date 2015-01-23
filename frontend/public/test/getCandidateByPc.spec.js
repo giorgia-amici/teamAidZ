@@ -1,38 +1,31 @@
 describe('Controllers', function() {
-  beforeEach(module('QanMP'));
 
-  var ctrl, scope;
+  beforeEach(module('qAnMp'));
 
-  beforeEach(inject(function($rootScope, $controller){
+  var ctrl, scope, $httpBackend, apiUrl;
+
+  beforeEach(inject(function($rootScope, $controller, _$httpBackend_){
     scope = $rootScope.$new();
-    ctrl = $controller('getCandidateByPc', {$scope: scope});
+    ctrl = $controller('getCandidatesByPC', {$scope: scope});
+    $httpBackend = _$httpBackend_;
   }));
 
-  describe('getCandidateByPc', function(){
+  describe('getCandidatesByPC', function(){
   	it('is a controller', function(){
   		expect(ctrl).toBeDefined();
   		expect(scope).toBeDefined();
-  	})
+  	});
 
-		// it('party is a defined object', function(){
-		// 	expect(scope.party).not.toBeUndefined();
-		// 	// console.log(scope.party)
-		// });
+  	it('has a candidate', function(){
 
-		// it('has a name', function(){
-		// 	expect(scope.party.name).toBe('Giorgia');
-		// });
+  	});
 
-		// it('has an organizer', function(){
-		// 	expect(scope.party.organizer).toBe('IDUNNO');
-		// });
+		it('needs an url', function(){
+			apiUrl = "http://www.theyworkforyou.com/api/getMP?&id=&constituency=&postcode=SE1+0XP&key=CCa95kDVHTT2Dj2zmPDdYN4f&callback=JSON_CALLBACK"
+			$httpBackend.expectGET(apiUrl).respond(200)
+			 // $httpBackend.verifyNoOutstandingExpectation();
+		});
 
-		// it('has a date', function(){
-		// 	expect(scope.party.location).toBe('London');
-		// });
 
-		// it('has a venue date', function(){
-		// 	expect(scope.party.date).toBe('1/1/2013');
-		// });
-  // })
+  })
 });

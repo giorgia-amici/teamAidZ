@@ -1,4 +1,4 @@
-angular.module('QanMP').controller('getQuestions', function($scope, $http){
+angular.module('qAnMp').controller('getQuestions', function($scope, $http){
 
 
 $scope.getQuestions = function(){
@@ -8,12 +8,13 @@ $scope.getQuestions = function(){
         $scope.questions = []
         $scope.allQuestions = response.questions
         $scope.allQuestions.forEach(function(singleQuestion){
-     	$scope.questions.push(singleQuestion.ask_text)            
+     		$scope.questions.push(singleQuestion.ask_text)            
         })
     })
 }
 
 $scope.getQuestions()
+
 
 // $scope.lockQuestion = function(){
 //     console.log('ciao clare I am a blocked lock')

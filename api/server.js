@@ -44,11 +44,11 @@ app.get('/', function(req, res) {
 
 
 app.get('/questions', function(req, res){
-	res.render('questions.html')
+	res.render('questions.html');
 });
 
 app.get('/answers', function(req, res){
-	res.render('answers.html')
+	res.render('answers.html');
 });
 
 
