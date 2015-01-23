@@ -14,7 +14,6 @@ $scope.getQuestions = function(){
 }
 
 $scope.getQuestions()
-
 $scope.postQuestion = function(){
 	  console.log("postQuestion")
 	  var url = "https://stopaidz-rails1.herokuapp.com/users/1/candidates/1/asks?callback=JSON_CALLBACK"

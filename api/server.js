@@ -11,6 +11,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/stopAIDSapp');
 var db = mongoose.connection;
 mongoose.set('debug', true);
+
 // var Question = require('./models/Question');
 // var question;
 // question = new Question({boby: 'I am the first question'});
