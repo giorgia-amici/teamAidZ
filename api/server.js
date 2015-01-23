@@ -11,12 +11,12 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/stopAIDSapp');
 var db = mongoose.connection;
 mongoose.set('debug', true);
-var Question = require('./models/Question');
-var question;
-question = new Question({boby: 'I am the first question'});
-question2 = new Question({boby: 'I am the second question'})
-question.save()
-question2.save()
+// var Question = require('./models/Question');
+// var question;
+// question = new Question({boby: 'I am the first question'});
+// question2 = new Question({boby: 'I am the second question'})
+// question.save()
+// question2.save()
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -34,10 +34,10 @@ app.engine('html', require('ejs').renderFile);
 app.use(express.static(path.join(__dirname + "./../frontend/public")));
 
 
-Question.findOne({"boby" : "I am the second question"}, function(err, theQuestion){
-	if(err) return console.log(err);
-	console.log("success", theQuestion)
-})
+// Question.findOne({"boby" : "I am the second question"}, function(err, theQuestion){
+// 	if(err) return console.log(err);
+// 	console.log("success", theQuestion)
+// })
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {

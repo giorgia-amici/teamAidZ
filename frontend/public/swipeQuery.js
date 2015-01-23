@@ -39,7 +39,12 @@ var swipe = function() {
 swipe()
 
 var lockQuestion = function(){
-    // // console.log($(this))
+    $("li").click(function() {
+    console.log(this);
+    var gio = this.firstChild.nextSibling.id = 'locked'
+    console.log(gio)
+
+});
     // var toBlock = $("#unlocked")
     // this.src = "/images/lock.png"
     // toBlock.id = "locked"
