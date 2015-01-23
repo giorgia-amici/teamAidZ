@@ -1,6 +1,4 @@
 angular.module('qAnMp').controller('getQuestions', function($scope, $http){
-
-
 $scope.getQuestions = function(){
     var urlTrial = "https://stopaidz-rails1.herokuapp.com/candidates/1/questions?callback=JSON_CALLBACK"
     $http.jsonp(urlTrial)
@@ -29,6 +27,5 @@ $scope.postQuestion = function(){
 			console.log(error)
 		})
 }
-
 
 })
