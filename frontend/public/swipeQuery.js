@@ -40,10 +40,10 @@ swipe()
 
 var lockQuestion = function(){
     $("li").click(function() {
-    console.log(this);
-    var gio = this.firstChild.nextSibling.id = 'locked'
-    console.log(gio)
-    
+    // console.log(this);
+    this.firstChild.nextSibling.id = 'locked'
+    this.firstChild.nextSibling.src = 'http://localhost:3000/images/lock.png'
+
 
 });
     // var toBlock = $("#unlocked")
@@ -53,7 +53,7 @@ var lockQuestion = function(){
 
     // // // console.log(toBlock.hasChildNodes('img'))
     // // console.log(toBlock.childNodes[1].src)
-    // // if(toBlock.childNodes[1].src==="http://localhost:3000/images/unlock.png"){
+    // // if(toBlock.childNodes[1].src==="this.firstChild.nextSibling.class){
     //  $('li')[1].attributes[3].value =  true
     // }
 //      console.log($('li')[1].attributes[3].value)
