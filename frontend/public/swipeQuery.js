@@ -38,25 +38,12 @@ var swipe = function() {
 }
 swipe()
 
-var lockQuestion = function(){
+var lockQuestion = function() {
     $("li").click(function() {
-    // console.log(this);
-    this.firstChild.nextSibling.id = 'locked'
-    this.firstChild.nextSibling.src = 'http://localhost:3000/images/lock.png'
-
-
-});
-    // var toBlock = $("#unlocked")
-    // this.src = "/images/lock.png"
-    // toBlock.id = "locked"
-    // toBlock.addClass = "iAmLocked"
-
-    // // // console.log(toBlock.hasChildNodes('img'))
-    // // console.log(toBlock.childNodes[1].src)
-    // // if(toBlock.childNodes[1].src==="this.firstChild.nextSibling.class){
-    //  $('li')[1].attributes[3].value =  true
-    // }
-//      console.log($('li')[1].attributes[3].value)
+        // console.log(this);
+        this.firstChild.nextSibling.id = 'locked'
+        this.firstChild.nextSibling.src = 'http://localhost:3000/images/lock.png'
+    });
 }
 
 var setLockDefault = function(){
