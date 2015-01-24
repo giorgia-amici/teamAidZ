@@ -43,6 +43,7 @@ var lockQuestion = function(){
     console.log(this);
     var gio = this.firstChild.nextSibling.id = 'locked'
     console.log(gio)
+    
 
 });
     // var toBlock = $("#unlocked")
