@@ -1,6 +1,5 @@
 var swipe = function() {
 // IF LOCK IS FALSE
-
     var listContainer = document.getElementById('wrap');
     var targetSelector = 'ul li';
     var threshold = 100;
@@ -10,19 +9,32 @@ var swipe = function() {
             isDraggingChildOfTarget = false,
             draggedParents = false;
         var dragged = $(e.target);
-        // console.log(dragged, 'i am dragged')
+        // console.log('whole element', e)
+        // console.log('target', e.target)
+        
 
         isDraggingTarget = dragged.is(targetSelector);
 
         if (!isDraggingTarget) {
+            console.log('inside first if')
             draggedParents = dragged.parents(targetSelector);
             isDraggingChildOfTarget = draggedParents.length;
         }
+
+
+        // e.class === blocked 
+        // console.log('swiping in a block element', e.target)
+        // return
+
+
+        
         if (isDraggingTarget || isDraggingChildOfTarget) {
+            // console.log('io sono', e)
             e.stopPropagation();
             e.preventDefault();
             e.gesture.preventDefault();
             var el = (isDraggingChildOfTarget) ? draggedParents : dragged;
+            // console.log('el', el)
             var dragDistance = e.gesture.deltaX;
 
             if (dragDistance > threshold) {
@@ -36,11 +48,12 @@ var swipe = function() {
         }
     });
 }
+
 swipe()
+
 
 var lockQuestion = function() {
     $("li").click(function() {
-        // console.log(this);
         this.firstChild.nextSibling.id = 'locked'
         this.firstChild.nextSibling.src = 'http://localhost:3000/images/lock.png'
     });
