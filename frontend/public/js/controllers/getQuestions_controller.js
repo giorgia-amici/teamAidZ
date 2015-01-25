@@ -16,9 +16,7 @@ angular.module('qAnMp').controller('getQuestions', function($scope, $http){
             question.total = array.length
             $scope.questions.push(question)
         })
-        console.log($scope.questions) 
     })
-
     $scope.lockQuestion = function(question) {
         if (question.locked) {
             question.imgSrc = "/images/unlock.png";
@@ -30,7 +28,6 @@ angular.module('qAnMp').controller('getQuestions', function($scope, $http){
             question.priority = 0
         } 
     }
-
     $scope.newQuestion = function(question) {
         if (!question.locked) {
             for(var i = 0; i < $scope.questions.length; i++) {
@@ -38,7 +35,6 @@ angular.module('qAnMp').controller('getQuestions', function($scope, $http){
             }
         }
     }
-
     $scope.countOfLockedItem = function(){
         $scope.countOfLocked = []
         $scope.questions.forEach(function(element){
@@ -56,7 +52,6 @@ angular.module('qAnMp').controller('getQuestions', function($scope, $http){
         }
     }    
 }
-
 $scope.getQuestions()
 $scope.postQuestion = function(){
       console.log("postQuestion")
@@ -69,6 +64,5 @@ $scope.postQuestion = function(){
         .error(function(error){
             console.log(error)
         })
-}
-
+   }
 })
