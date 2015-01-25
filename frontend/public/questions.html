@@ -4,23 +4,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="questions.css">
 <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,600' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <script src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.1.3/hammer.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <body ng-controller="getQuestions">
+<div class="container">
+    <div class="row">
+        <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+            <ul class="event-list">
+                <li ng-repeat="question in questions | limitTo : display" >
+                    <time datetime="{{myDate | date:'mediumDate'}}">
+                        <span class="day">{{myDate | date: 'dd'}}</span>
+                        <span class="month">{{myDate | date: 'MMM'}}</span>
+                        <span class="year">{{myDate | date: 'yyyy'}}</span>
+                    </time>
+                    <img id="unlocked" ng-src="{{question.imgSrc}}" ng-click="lockQuestion(question)">
+                    <div class="info">
+                        <h2 class="title">Would you rather...</h2>
+                        <p class="desc">{{question.wording}}</p>
+                    </div>
+                    <div class="social">
+                        <ul>
+                            <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+                            <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-<div id="test"></div>
-<div id="wrap">
-<ul>
-<li ng-repeat="question in questions">
-<img id="unlocked" src="/images/unlock.png" width="28" height="28" onclick="lockQuestion()">
-{{question}}
-</li>
-</ul>
-<button ng-click="postQuestion()"> Submit</button>
-<button onclick="setLockDefault()">Locked?</button>
 
+
+
+	<button type="button" class="btn btn-primary" ng-show="isReadyToSubmit()"> Sumbit your questions </button>
       <script src="/bower_components/angular/angular.js"></script>
       <!-- scripts.js -->
       <script src="js/app.js"></script>

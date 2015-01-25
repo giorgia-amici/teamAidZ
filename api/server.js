@@ -50,6 +50,10 @@ app.get('/', function(req, res) {
   res.render('index.html');
 });
 
+app.get('/giorgia', function(req, res) {
+  res.render('giorgia.html');
+});
+
 
 app.get('/questions', function(req, res){
 	res.render('questions.html');
