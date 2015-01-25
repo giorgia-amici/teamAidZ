@@ -14,22 +14,16 @@
     <div class="row">
         <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
             <ul class="event-list">
-                <li ng-repeat="question in questions | limitTo : display" >
+                <li ng-repeat="question in questions | orderBy : 'priority' | limitTo : display" >
                     <time datetime="{{myDate | date:'mediumDate'}}">
                         <span class="day">{{myDate | date: 'dd'}}</span>
                         <span class="month">{{myDate | date: 'MMM'}}</span>
                         <span class="year">{{myDate | date: 'yyyy'}}</span>
                     </time>
                     <img id="unlocked" ng-src="{{question.imgSrc}}" ng-click="lockQuestion(question)">
-                    <div class="info">
+                    <div class="info" ng-dblclick="newQuestion(question)">
                         <h2 class="title">Would you rather...</h2>
                         <p class="desc">{{question.wording}}</p>
-                    </div>
-                    <div class="social">
-                        <ul>
-                            <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
-                            <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-                        </ul>
                     </div>
                 </li>
             </ul>
@@ -42,6 +36,7 @@
 
 	<button type="button" class="btn btn-primary" ng-show="isReadyToSubmit()"> Sumbit your questions </button>
       <script src="/bower_components/angular/angular.js"></script>
+       <script src="/bower_components/angular-touch/angular-touch.js"></script>
       <!-- scripts.js -->
       <script src="js/app.js"></script>
       <script src="js/app.config.js"></script>
