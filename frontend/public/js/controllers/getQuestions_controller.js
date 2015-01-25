@@ -15,16 +15,9 @@ $scope.getQuestions = function(){
 
 $scope.getQuestions()
 $scope.postQuestion = function(){
-	  console.log("postQuestion")
-	  var url = "https://stopaidz-rails1.herokuapp.com/users/1/candidates/1/asks?callback=JSON_CALLBACK"
-	  // var url = "http://localhost:3500"
-		$http.post(url, { question : $scope.FirstMockQuestion })
-		.success(function(response){
-			console.log(response, 'success')
-		})
-		.error(function(error){
-			console.log(error)
-		})
+
+    $( "#hidden_form" ).submit();
+    console.log("hidden form submitted")
 }
 
 })
