@@ -5,7 +5,7 @@ var path = require('path');
 var fs = require('fs');
 var url = require('url');
 var bodyParser = require('body-parser');
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 4000
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/stopAIDSapp');

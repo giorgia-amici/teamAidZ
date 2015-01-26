@@ -1,12 +1,12 @@
 angular.module('qAnMp').controller('getQuestions', function($scope, $http){
     $scope.display = 3
     $scope.myDate = new Date()
+    $scope.questions = []
     $scope.getQuestions = function(){
         var question;
         var urlTrial = "https://stopaidz-rails1.herokuapp.com/candidates/1/questions?callback=JSON_CALLBACK"
         $http.jsonp(urlTrial)
         .success(function(response){
-        $scope.questions = []
         response.questions.forEach(function(singleQuestion,index,array){
             question = {}
             question.wording = singleQuestion.ask_text
@@ -53,11 +53,17 @@ angular.module('qAnMp').controller('getQuestions', function($scope, $http){
     }    
 }
 $scope.getQuestions()
+
 $scope.postQuestion = function(){
-      console.log("postQuestion")
-      var url = "https://stopaidz-rails1.herokuapp.com/users/1/candidates/1/asks?callback=JSON_CALLBACK"
-      // var url = "http://localhost:3500"
-        $http.post(url, { question : $scope.FirstMockQuestion })
+        var questionsSelected = []
+        $scope.questions.forEach(function(question) {
+            if(question.locked == true) questionsSelected.push(question)
+        })
+
+      console.log("postQuestion",questionsSelected)
+      // var url = "https://stopaidz-rails1.herokuapp.com/users/1/candidates/1/asks?callback=JSON_CALLBACK"
+      var url = "http://localhost:3000/users"
+        $http.post(url, {'questionsSelected' : 1} )
         .success(function(response){
             console.log(response, 'success')
         })
