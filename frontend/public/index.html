@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="qAnMp">
 <head>
     <meta charset="utf-8">
 
@@ -14,14 +14,15 @@
     rel='stylesheet' type='text/css'>
 </head>
 
-<body>
+<body ng-controller="getCandidatesByPC">
+<center>
     <header>
         <h1>find your local candidate</h1>
     </header>
 
     <div id="wrap-container">
-        <form id="search-form" name="search-form">
-            <input placeholder="enter postcode" type="text">
+        <form id="search-form" name="search-form" ng-submit="getCandidates()">
+            <input placeholder="enter postcode" type="text" ng-model="postCode"/>
         </form>
 
         <div class="container">
@@ -31,7 +32,7 @@
             </div>
 
             <div id="candidate-image">
-                <img class="img-circle" onerror=
+                <img ng-src="http://www.theyworkforyou.com/images/mps/{{mpCandidate.person_id}}.jpg"class="img-circle" onerror=
                 "this.src='images/user.png';"><br>
             </div>
 
@@ -49,7 +50,9 @@
 
     <footer>
         student stop aids©
-    </footer><!-- libraries -->
+    </footer>
+    </center>
+    <!-- libraries -->
     <script src="/bower_components/angular/angular.js"></script> <!-- scripts.js -->
      <script src="js/app.js"></script> <script src="js/app.config.js"></script> <!-- controller -->
      <script src="js/controllers/getCandidateByPc_controller.js"></script> <script src="changeIndexElementJquery.js"></script>

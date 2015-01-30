@@ -7,7 +7,6 @@ $scope.getCandidates = function(){
                  console.log($scope.mpCandidate)
                 })
                  .error(function(error) {
-                  // console.log('error in getCandidatesByPC',error)
                   $scope.erroR = error
                   // $scope.myError = "Invalid Postcode"
                   // console.log($scope.myError)

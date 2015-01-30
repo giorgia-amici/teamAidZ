@@ -1,6 +1,3 @@
-
-
-
 app.config(['$httpProvider', function ($httpProvider) {
   //Reset headers to avoid OPTIONS request (aka preflight)
   $httpProvider.defaults.headers.common = {};
