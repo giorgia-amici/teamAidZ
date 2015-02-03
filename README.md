@@ -10,8 +10,7 @@ implementing later.
 Also the Angular testing part needs to be polished.
 
 [<img src= https://img.shields.io/badge/jQuery-JS-blue.svg>](http://api.jquery.com/)
-[<img src=https://img.shields.io/badge/TDD-ff69b4.svg>](http://karma-runner.github.io/0.12/index.html)
 [<img src=https://img.shields.io/badge/Karma-Matchers-green.svg>](http://karma-runner.github.io/0.12/index.html)
-[<img src= https://img.shields.io/badge/Angular-red.svg>](https://angularjs.org/)
-[<img src= https://img.shields.io/badge/Node-green.svg>](https://angularjs.org/)
-[<img src= https://img.shields.io/badge/MongoDB-grey.svg>](https://angularjs.org/)
+[<img src=https://img.shields.io/badge/Angular-JS-red.svg>](https://angularjs.org/)
+[<img src= https://img.shields.io/badge/Node-JS-green.svg>](http://nodejs.org/)
+[<img src= https://img.shields.io/badge/Mongo-DB-lightgrey.svg>](http://www.mongodb.org/)
