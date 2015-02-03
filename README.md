@@ -14,6 +14,7 @@ The main aim of the app is to __engage student with their local MPs and PCCs__. 
 
 ###Future implementation
 - Use the twitter API for notifying students and candidates
+- Use the twitter API to have manage date regarding: time of response, general trend regarding the replies per contituency.
 - The server itself is quite trivial although there are some aspects (like storage) I would like to
 implement.
 - Use Protractore for E2E tests and implement unit tests.
